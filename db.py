@@ -6,7 +6,7 @@ def get_strings():
 
     cursor = conn.cursor()
 
-    sql = "SELECT * FROM instrument"
+    sql = "SELECT * FROM instrument WHERE type = 'Струнный инструмент'"
 
     cursor.execute(sql)
 
@@ -16,5 +16,38 @@ def get_strings():
 
     return instrument
 
+def get_drums():
+
+    conn = sqlite3.connect("db.db")
+
+    cursor = conn.cursor()
+
+    sql = "SELECT * FROM instrument WHERE type = 'Ударный инструмент'"
+
+    cursor.execute(sql)
+
+    instrument = cursor.fetchall()
+
+    conn.close()
+
+    return instrument
+
+def get_duhovoi():
+
+    conn = sqlite3.connect("db.db")
+
+    cursor = conn.cursor()
+
+    sql = "SELECT * FROM instrument WHERE type = 'Духовой иструмент'"
+
+    cursor.execute(sql)
+
+    instrument = cursor.fetchall()
+
+    conn.close()
+
+    return instrument
 
 print(get_strings())
+print(get_drums())
+print(get_duhovoi())
