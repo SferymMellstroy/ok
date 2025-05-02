@@ -25,11 +25,8 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="http://127.0.0.1:5000" class="nav-link px-2 text-secondary">Home</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                    <li><a href="{{url_for('index')}}" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="{{url_for('about')}}" class="nav-link px-2 text-white">About</a></li>
                 </ul>
 
                 <div class="text-end">
@@ -105,12 +102,9 @@
         <div class="colmb3">
             <h5>Section</h5>
             <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="http://127.0.0.1:5000"
+                <li class="nav-item mb-2"><a href="{{url_for('index')}}"
                         class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                <li class="nav-item mb-2"><a href="{{url_for('about')}}" class="nav-link p-0 text-body-secondary">About</a></li>
             </ul>
         </div>
 
