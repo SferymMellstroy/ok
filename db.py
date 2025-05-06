@@ -48,6 +48,15 @@ def get_duhovoi():
 
     return instrument
 
+def add_user(login, email, password):
+    conn = sqlite3.connect('db.db')
+    cursor = conn.cursor()
+    sql = "INSERT INTO user (login, email, password) VALUES (?, ?, ?)"
+    cursor.execute(sql, (login, email, password))
+    conn.commit()
+    conn.close()
+
+
 print(get_strings())
 print(get_drums())
 print(get_duhovoi())
