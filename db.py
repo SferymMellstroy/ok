@@ -57,7 +57,56 @@ def add_user(login, email, password):
     conn.commit()
     conn.close()
 
+def get_top_strings():
+    
+    conn = sqlite3.connect("db.db")
+
+    cursor = conn.cursor()
+
+    sql = "SELECT * FROM tops WHERE type = 'Струнный инструмент'"
+
+    cursor.execute(sql)
+
+    tops = cursor.fetchall()
+
+    conn.close()
+
+    return tops
+
+def get_top_drums():
+    
+    conn = sqlite3.connect("db.db")
+
+    cursor = conn.cursor()
+
+    sql = "SELECT * FROM tops WHERE type = 'Ударный инструмент'"
+
+    cursor.execute(sql)
+
+    tops = cursor.fetchall()
+
+    conn.close()
+
+    return tops
+
+def get_top_duhovoi():
+    
+    conn = sqlite3.connect("db.db")
+
+    cursor = conn.cursor()
+
+    sql = "SELECT * FROM tops WHERE type = 'Духовой инструмент'"
+
+    cursor.execute(sql)
+
+    tops = cursor.fetchall()
+
+    conn.close()
+
+    return tops
+
 
 print(get_strings())
 print(get_drums())
 print(get_duhovoi())
+print(get_top_strings())

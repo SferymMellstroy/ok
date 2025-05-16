@@ -65,14 +65,13 @@
         <img src="https://steamuserimages-a.akamaihd.net/ugc/838084612819123631/63FA8BFB2E60A3F91E362B42156AE10B33772F65/"
             alt="" width="535">
         <div>
-            <p class="yet">Цены на некоторые духовые инструменты:</p>
-
-            <p class="yet">Saxoфон Brahner TS-206A — 75 900 рублей;</p>
-            <p class="yet">Saxoфон Roy Benson SS-302 — 78 025 рублей;</p>
-            <p class="yet">Кларнет Bb Leblanc L320NC (пр-во США) — 67 388 рублей;</p>
-            <p class="yet">Кларнет Bb Selmer 1400B (пр-во США) — 81 175 рублей;</p>
-            <p class="yet">Губная гармошка миниатюрная Swan SW4 — 350 рублей;</p>
-            <p class="yet">Губная гармошка Seydel Sohne 11301C Solist Pro C — 6 250 рублей;</p>
+        <p class="yet">ТОП 5 ДУХОВЫХ ИНСТРУМЕНТОВ:</p>
+                {% for du in duh %}
+            
+            <p>--------------------------------------------------------------------------------------------------------------------------</p>
+            <p class="yet"> {{du[3]}} - {{du[1]}} — {{du[2]}}.</p>
+            
+                {% endfor %}
         </div>
 
     </div>

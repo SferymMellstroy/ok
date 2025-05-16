@@ -4,6 +4,9 @@ from db import get_drums
 from db import get_duhovoi
 from flask import request
 from db import add_user
+from db import get_top_strings
+from db import get_top_drums
+from db import get_top_duhovoi
 
 app = Flask(__name__)
 
@@ -29,56 +32,78 @@ def sign_up():
         add_user(username, email, password)
     return render_template("sign_up.html", title = "Registration form")
 
+
+
 @app.route("/guitar")
 def guitar():
+     
+    strings = get_top_strings()
 
-    return render_template("guitar.html")
+    return render_template("guitar.html", ste = strings)
+
 
 @app.route("/electro-guitar")
 def electroguitar():
 
-    return render_template("electro-guitar.html")
+    strings = get_top_strings()
+
+    return render_template("electro-guitar.html", ste = strings)
 
 @app.route("/balalayka")
 def balalayka():
 
-    return render_template("balalayka.html")
+    strings = get_top_strings()
+
+    return render_template("balalayka.html", ste = strings)
 
 @app.route("/bongo")
 def bongo():
 
-    return render_template("bongo.html")
+    drums = get_top_drums()
+
+    return render_template("bongo.html", dru = drums)
 
 @app.route("/drums")
 def drums():
 
-    return render_template("drums.html")
+    drums = get_top_drums()
+
+    return render_template("drums.html", dru = drums)
 
 @app.route("/triangle")
 def triangle():
 
-    return render_template("triangle.html")
+    drums = get_top_drums()
+
+    return render_template("triangle.html", dru = drums)
 
 @app.route("/saxophone")
 def saxophone():
 
-    return render_template("saxophone.html")
+    duhovoi = get_top_duhovoi()
+
+    return render_template("saxophone.html", duh = duhovoi)
 
 @app.route("/clarnet")
 def clarnet():
 
-    return render_template("Clarnet.html")
+    duhovoi = get_top_duhovoi()
+
+    return render_template("clarnet.html", duh = duhovoi)
 
 @app.route("/garmoshka")
 def garmoshka():
 
-    return render_template("garmoshka.html")
+    duhovoi = get_top_duhovoi()
+
+    return render_template("garmoshka.html", duh = duhovoi)
 
 
 @app.route("/about")
 def about():
 
     return render_template("about.html")
+
 
 app.run(debug=True)
 
